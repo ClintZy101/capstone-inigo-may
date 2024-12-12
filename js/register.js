@@ -36,7 +36,8 @@ async function registerUser(event) {
       const data = await response.json();
       alert(`Registration successful: ${data.message}`);
       // Optionally redirect the user to a login page
-      window.location.href = "acc-login.html";
+      // window.location.href = "acc-login.html";
+      console.log(data)
     } else {
       const errorData = await response.json();
       alert(`Error: ${errorData.message}`);
