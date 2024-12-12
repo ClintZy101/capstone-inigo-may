@@ -11,6 +11,20 @@ const categoryDiscountCount = 3;
 const featuredCategoryLimit = 1;
 const pagePath = window.location.pathname;
 
+function initHomePage() {
+  if (pagePath.includes("product-page.html")) {
+    setProductDetails();
+  } else {
+    if (pagePath.includes("index.html")) {
+      renderHomeProducts("featured-products", todayFeatured);
+      renderHomeProducts("deals-products", todayDeals); // New function for deals
+    }
+    setTimeout(addCartToHTML, 3000);
+    setTimeout(updateWishlistCount, 3000);
+    setTimeout(displayWishlistItems, 3000);
+  }
+}
+
 checkProduct();
 if (products == null) {
   fetch("js/product.json")
@@ -57,7 +71,7 @@ function renderInitPage() {
   if (pagePath.includes("shop.html")) {
     renderShopProducts();
   } else if (!pagePath.includes("cart-checkout.html")) {
-    // initHomePage();
+    initHomePage();
   }
 }
 

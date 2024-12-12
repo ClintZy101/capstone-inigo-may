@@ -42,7 +42,7 @@ async function loginUser(event) {
         // Notify the user
         alert(`Login successful. Welcome back, ${data.user.name}!`);
         // Optionally redirect the user to a dashboard or homepage
-        window.location.href = "homepage.html";
+        window.location.href = "index.html";
       } else {
         const errorData = await response.json();
         console.error("Login error:", errorData);
