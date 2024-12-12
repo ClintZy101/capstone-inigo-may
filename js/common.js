@@ -57,7 +57,7 @@ function renderInitPage() {
   if (pagePath.includes("shop.html")) {
     renderShopProducts();
   } else if (!pagePath.includes("cart-checkout.html")) {
-    initHomePage();
+    // initHomePage();
   }
 }
 
